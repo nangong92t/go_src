@@ -1,0 +1,79 @@
+app.name = Host Tracker
+# The date format used by Revel. Possible formats defined by the Go `time`
+# package (http://golang.org/pkg/time/#Parse)
+format.date     = 01/02/2006
+format.datetime = 01/02/2006 15:04
+
+# Determines whether the template rendering should use chunked encoding.
+# Chunked encoding can decrease the time to first byte on the client side by
+# sending data before the entire template has been fully rendered.
+results.chunked = false
+
+
+# Prefixes for each log message line
+log.trace.prefix = "TRACE "
+log.info.prefix  = "INFO  "
+log.warn.prefix  = "WARN  "
+log.error.prefix = "ERROR "
+
+[prod]
+# The default language of this application.
+i18n.default_language = en
+
+mode.dev = false
+watch = false
+module.testrunner =
+
+log.trace.output = off
+log.info.output  = off
+log.warn.output  = logs/%(app.name)s.log
+log.error.output = logs/%(app.name)s.log
+
+# The GoMysqlProxy's main tracker database root path.
+leveldb.folder     = /var/data
+
+# The min and max mysql connection number in connect pooling for each mysql node and each tracking node.
+mysql.ConnectionPooling.min     = 50
+mysql.ConnectionPooling.max     = 100
+
+# All mysql database node server host.
+host.group[0].id                = 1
+host.group[0].master[0].ip      = 112.124.109.11
+host.group[0].master[0].port    = 3306
+host.group[0].master[0].user    = tony
+host.group[0].master[0].pass    = shaluo
+host.group[0].master[0].sign    = ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+host.group[0].slave[0].ip       = 114.215.184.73
+host.group[0].slave[0].port     = 3306
+host.group[0].slave[0].user     = root
+host.group[0].slave[0].pass     = shaluo
+host.group[0].slave[0].sign     = ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+host.group[0].slave[1].ip       = 182.92.130.30
+host.group[0].slave[1].port     = 3306
+host.group[0].slave[1].user     = root
+host.group[0].slave[1].pass     = shaluo
+host.group[0].slave[1].sign     = ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+
+host.group[1].id                = 2
+host.group[1].master[0].ip      = 123.57.37.140
+host.group[1].master[0].port    = 3306
+host.group[1].master[0].user    = root
+host.group[1].master[0].pass    = shaluo
+host.group[1].master[0].sign    = ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+host.group[1].slave[0].ip       = 112.124.114.237
+host.group[1].slave[0].port     = 3306
+host.group[1].slave[0].user     = root
+host.group[1].slave[0].pass     = shaluo
+host.group[1].slave[0].sign     = ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+host.group[1].slave[1].ip       = 182.92.150.51
+host.group[1].slave[1].port     = 3306
+host.group[1].slave[1].user     = root
+host.group[1].slave[1].pass     = shaluo
+host.group[1].slave[1].sign     = ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+

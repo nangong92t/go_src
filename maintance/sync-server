@@ -1,0 +1,42 @@
+#!/bin/sh
+BASE_HOME=/usr/local/git-sync
+PID=${BASE_HOME}/.pid
+status(){
+   echo "==========status======="
+}
+
+start() {
+    /usr/bin/perl -T /usr/local/git-sync/maintance/rpc-sync-server.pl
+    echo "sync server started.";
+}
+
+stop() {
+    killall -9 perl
+    echo "sync server stoped.";
+}
+
+restart() {
+    stop;
+    echo "restarting.........";
+    sleep 2;
+    start;
+
+}
+case "$1" in
+    'start')
+        start
+        ;;
+    'stop')
+        stop
+        ;;
+    'status')
+        status
+        ;;
+    'restart')
+        restart
+        ;;
+    *)
+    echo "usage: $0 {start|stop|restart|status}"
+    exit 1
+        ;;
+    esac

@@ -1,0 +1,36 @@
+# 底层数据服务配置
+services:
+
+    # 当前服务器状态监控, 只开一个进程 已经配置好，不用再配置
+    - name: HostStatus
+      protocol: udp
+      port: 9901
+      child_count: 1
+      ip: 0.0.0.0
+      recv_timeout: 1000
+      process_timeout: 1000
+      handle_path: git.masontest.com/branches/goserver/apps/hoststatus
+      worker_class: RpcWorker
+
+
+    # 集群服务器整体状态监控, 只开一个进程 已经配置好，不用再配置
+    #- name: HostTracker
+    #  protocol: tcp
+    #  port: 9902
+    #  child_count: 1
+    #  ip: 0.0.0.0
+    #  recv_timeout: 1000
+    #  process_timeout: 1000
+    #  handle_path: git.masontest.com/branches/goserver/apps/tracker
+    #  worker_class: RpcWorker
+
+# 开发环境: dev or prod
+env: prod
+
+# 运行worker的用户,正式环境应该用低权限用户运行worker进程
+worker_user: 
+
+# 数据签名用私匙
+rpc_secret_key: ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+

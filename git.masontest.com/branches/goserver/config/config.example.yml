@@ -1,0 +1,118 @@
+# 底层数据服务配置
+services:
+
+    # STD 服务
+    - name: STD
+      # [必填]tcp udp
+      protocol: tcp
+
+      # [必填]监听的端口
+      port: 9001
+
+      # [必填]worker进程数
+      child_count: 10
+
+      # [选填]绑定的ip，注意：生产环境要绑定内网ip 不配置默认是0.0.0.0
+      ip: 0.0.0.0
+
+      # [选填]从客户端接收数据的超时时间, 默认为1000毫秒
+      recv_timeout: 1000
+
+      # [选填]业务逻辑处理超时时间
+      process_timeout: 30000
+
+      # [选填]发送数据到客户端超时时间
+      send_timeout: 1000
+
+      # [选填]是否是长连接, 不配置默认是短链接
+      persistent_connection: true
+
+      # [选填]进程接收多少请求后退出, 不配置默认是0，不退出
+      max_requests: 1000
+
+      # [必填]调用实体服务路径
+      handle_path: std/data-service/std
+
+      # worker解析类, 目前能支持: RpcWorker, StatisticWorker, EchoWorker, 默认为EchoWorker
+      worker_class: RpcWorker
+
+      # 数据签名用私匙
+      secret_key:
+
+
+    # 集群服务器整体状态监控, 只开一个进程 已经配置好，不用再配置
+    - name: GoMysqlProxy
+      protocol: tcp
+      port: 9002
+      child_count: 1
+      ip: 0.0.0.0
+      recv_timeout: 1000
+      process_timeout: 10000
+      handle_path: git.masontest.com/branches/gomysqlproxy
+      worker_class: RpcWorker
+      servers:
+        - group:
+            - masters:
+                - ip: 112.124.109.11
+                  port: 3306 
+                  user: root
+                  pass: shaluo
+            - slaves:
+                - ip: 114.215.184.73
+                  port: 3306
+                  user: root
+                  pass: shaluo
+                - ip: 182.92.130.30
+                  port: 3306
+                  user: root
+                  pass: shaluo
+        - group:
+            - masters:
+                - ip: 123.57.37.140
+                  port: 3306 
+                  user: root
+                  pass: shaluo
+            - slaves:
+                - ip: 112.124.114.237
+                  port: 3306
+                  user: root
+                  pass: shaluo
+                - ip: 182.92.150.51
+                  port: 3306
+                  user: root
+                  pass: shaluo
+
+
+    # 当前服务器状态监控, 只开一个进程 已经配置好，不用再配置
+    - name: HostStatus
+      protocol: udp
+      port: 9901
+      child_count: 1
+      ip: 0.0.0.0
+      recv_timeout: 1000
+      process_timeout: 1000
+      handle_path: git.masontest.com/branches/goserver/apps/hoststatus
+      worker_class: RpcWorker
+
+
+    # 集群服务器整体状态监控, 只开一个进程 已经配置好，不用再配置
+    #- name: HostTracker
+    #  protocol: tcp
+    #  port: 9902
+    #  child_count: 1
+    #  ip: 0.0.0.0
+    #  recv_timeout: 1000
+    #  process_timeout: 1000
+    #  handle_path: git.masontest.com/branches/goserver/apps/tracker
+    #  worker_class: RpcWorker
+
+# 开发环境: dev or prod
+env: prod
+
+# 运行worker的用户,正式环境应该用低权限用户运行worker进程
+worker_user: 
+
+# 数据签名用私匙
+rpc_secret_key: ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+

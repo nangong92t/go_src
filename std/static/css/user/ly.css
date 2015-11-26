@@ -1,0 +1,433 @@
+body {
+  margin: 0;
+}
+
+
+a,
+p,
+span {
+	color: #fff;
+
+}
+span{
+	font-size: 20px;
+}
+label h5{
+	color: #fff;
+	margin-top: 5px;
+}
+html{}
+body {
+  background-color: #CCCCCC;
+  height: 100%;
+}
+.bg1{
+	background: url(../img/index_bg.jpg) repeat fixed;	
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+h1{
+	line-height: 90px;
+	font-size: 70px;
+}
+nav{
+	height:80px;
+	margin-bottom: 20px;
+}
+.logo{
+	float: right;
+	height: 100%;
+	
+}
+.rhr{
+	border:2px solid #fff;
+	border-style: none solid none none;
+
+}
+.lhr{
+	border:2px solid #fff;
+	border-style: none none none solid;
+}
+.bhr{
+	border: 2px solid #fff;
+	border-style: none none solid none;
+}
+.allhr{
+	border:2px solid #fff;
+	border-style: solid solid solid solid;
+}
+.align
+{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.line{
+	width:1px; 
+	height:9px; 
+	background:#fff; 
+}
+.banner { position: relative; overflow: auto; }
+    .banner li { list-style: none; }
+        .banner ul li { float: left; }
+
+.dropdown-menu {
+	background: rgba(0,0,0,0.6);
+}
+	.dropdown-menu li a {
+		color: #fff;
+	}
+.dropdown-menu .divider{
+	margin: 0px;
+
+}
+
+.navbar-nav .navbar-collapse{float: center;width:500px;}
+.login{
+	padding:12px 0px 0px 0px;
+	
+	/*float:right;*/
+}
+.loginmodal{}
+.signup{
+	width: 100%;
+	height: 35px;
+	margin-bottom: 10px;
+}
+.signupwith{
+	width: 80%;
+	height: 30px;
+	margin-bottom: 5px;
+	margin-left: 20px;
+}
+.signin{
+	width: 100%;
+	height: 35px;
+	margin-bottom: 10px;
+}
+.info{
+	width: 100%;
+}
+.info h4{
+	color: #fff;
+	margin-left: 10px;
+}
+.info  .infotitle{
+	height: 44px;
+}
+.info .infocarousel{
+	height: 200px;
+	margin-bottom:0px;
+}
+.info .infocontainer{
+	height: 300px;
+	background-color: #fff;
+	padding: 10px;
+}	.infocontainer h4 { color: #000;margin:0;padding-bottom: 10px;}
+	.infocontainer li { color:#999999; margin-top: 10px;font-size: 18px;}
+
+
+hr {
+	margin-left: auto;
+	margin-right: auto;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: rgb(0, 104, 107);
+	border-right-color: rgb(0, 104, 107);
+	border-bottom-color: rgb(0, 104, 107);
+	border-left-color: rgb(0, 104, 107);
+	background-color: rgb(0, 104, 107);
+	height: 15px;
+	width: 1px;
+}
+
+.subitem{
+	width:80%;
+	float:left;
+}
+.subitem1{
+	border:1px solid #fff;
+	border-style: solid solid solid solid;
+}
+.subitem1 span{font-size: 13px;}
+
+
+.bottom{
+/*position:absolute;*/
+position: fixed;
+bottom:0;
+width:100%;
+height:25px;/*脚部的高度*/
+background-color:#fff;
+clear:both;
+}
+.bottom a span{ 
+	color: #000;
+	font-size: 10px;
+}
+.bottomslide{
+	padding-top: 10px;
+	display: none;
+	height: 500px;
+	background: rgba(0,0,0,0.8);
+	z-index: 1000;
+}
+.bottomslide a span{
+	color: #999999;
+	font-size: 13px;
+}
+.bottomslide ul{
+	padding:0;
+}
+.bottomslide ul li{
+	margin-top: 10px;
+	list-style:none;
+}
+.bottomslide img{
+	width: 80px;
+	height: 50px;
+	border:4px solid #fff;
+}
+.bottomslide strong{
+	font-size: 16px;
+}
+
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  text-align: left;
+  z-index: 10;
+  left: 5%;  
+}
+
+
+
+.lvjing{background:#ff0;opacity:0.9;}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  /*background-color: #333;*/
+}
+
+.carousel-indicators{
+	left:10%;
+}
+
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+/*---------lines--------------*/
+.box {
+	margin-bottom: 20px;
+	float: left;
+	width: 170px;  
+	margin-right: 30px;
+	height: 180px;
+}
+.box .boxhead{
+	width: 100%;
+	height: 15%;
+	border-radius: 12px;
+}
+.box .boxcontain{
+	width: 100%;
+  	height: 85%;
+  	background: rgba(9,9,9,0.2);
+	border-radius: 7px;
+
+  	padding: 5% 5% 5% 5%;
+
+}
+.boxcontain .boximg{
+	width: 100%;
+	height: 90%;
+
+}
+.boxcontain .boxrating{
+	width: 100%;
+	height: 10%;
+}
+.boximg img {
+	width: 100%;
+	height: 100%;
+	border-radius:5px;
+}
+
+.box h6{
+	color: #fff;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.boxhead span{
+	float: right;
+	font-size: 14px;
+	padding-right: 4px;
+}
+/*----------profile----------------*/
+.profile{
+}
+.profile .profileterm{
+	float: left;
+}
+.profile .profiletitle{
+	height: 15%;
+	border:1px solid #fff;
+	border-style: none none dashed none;
+	padding-top: 15px;
+	margin-bottom: 15px;
+}
+.profiletitle h4{ margin: 0px;}
+.profile .profilegroup{
+	width: 100%;
+}
+.profilegroup .profileitem{
+	margin-bottom: 10px;
+	float: left;
+	width: 120px;  
+	margin-right: 10px;
+	height: 110px;
+}
+.profilegroup .profileitemaddnew{
+ 	margin-bottom: 10px;
+	float: left;
+	width: 120px;  
+	margin-right: 10px;
+	height: 110px;
+	border:1px solid #fff;
+	border-style: dashed dashed dashed dashed;
+}
+
+.profileitem img{
+	width: 100%;
+	height: 100%;
+}
+/*------sitemap---------*/
+.sitemapterm{
+	width: 100%;
+	float: left;
+	/*background: black;*/
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.sitemapterm .stmaptitle{
+	border: 3px solid gray;
+	border-style: none none solid none;
+	height: 20px;
+	width: 100%;
+/*	background: blue;*/
+} 
+.stmaptitle a h5 { margin: 0; color: #fff;}
+.sitemapterm .stmapgroup{
+	width: 100%;
+	float: left;
+	height: 80px;
+	/*background: green;*/
+	padding-top: 5px;
+	margin-bottom: 15px;
+}
+.stmapgroup .stmapiitem{
+	width: 33%;
+	float: left;
+	height: 70%;
+	background: gray;
+}
+.stmapiitem > img{
+	width: 100%;
+	height: 100%;
+}
+.stmapgroup .stmapsitem{
+	float: right;
+	width: 65%;
+	height: 25%;
+	border:1px solid #fff;
+	border-style: none none dashed none;
+	padding-left: 2%;
+	/*background: red;*/
+}
+.stmapgroup .stmaplitem{
+	float: left;
+	width: 100%;
+	height: 25%;
+	border:1px solid #fff;
+	border-style: none none dashed none;
+	padding-left: 37%;
+	/*background: #dad;*/
+}
+.stmapsitem  h6{margin: 0;color: #fff;float: left;}
+.stmaplitem  h6{margin: 0;color: #fff;float: left;}
+.stmapsitem > span > h6 {margin: 0;color: gray;float: right;}
+.stmaplitem > span > h6 {margin: 0;color: gray;float: right;}
+.sitemapmodal{}
+
+/*info02*/
+.semacode{
+	width: 100%;
+	height: 200px;
+	padding: 5px;
+	margin-bottom: 30px;
+	background: rgba(0,0,0,0.4);
+}
+.semacode .semacodeimg{
+	width: 100%;
+	height: 85%;
+}
+.semacode .semacodebottom{
+	width: 100%;
+	text-align:center;
+	height: 15%;
+	margin-bottom: 2px;
+	margin-top: 4px;
+}
+.semacodeimg img{
+	width: 100%;
+	height: 100%;
+}
+.semacodebottom a span{
+	font-size: 14px;
+}
+.recommend{
+	width: 100%;
+	height: 400px;
+}
+
+.recommend .recommendtitle{
+	width: 100%;
+	height: 5%;
+	text-align:left;
+	margin-bottom: 2px;
+	margin-top: 4px;
+}
+.recommend .recommendgroup{
+	width: 100%;
+	height: 95%;
+	margin-top: 10%;
+}
+.recommendtitle a span{
+	font-size: 16px;
+}
+.recommendgroup .recommenditem{
+	height: 20%;
+	margin-top: 2px;
+	padding: 3%;
+	background: rgba(0,0,0,0.4);
+}
+.recommenditem img{
+	width: 100%;
+	height: 100%;
+}

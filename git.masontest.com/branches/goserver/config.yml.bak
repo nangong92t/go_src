@@ -1,0 +1,34 @@
+# 底层数据服务配置
+services:
+
+    # 查询接口调用结果 只开一个进程 已经配置好，不用再配置
+    - name: StatisticWorker
+      protocol: tcp
+      port: 9901
+      child_count: 1
+
+    # 查询接口调用结果 只开一个进程 已经配置好，不用再配置
+#    - name: StatisticProvider
+#      protocol: tcp
+#      port: 9902
+#      child_count: 1
+#      ip: 0.0.0.0
+#      recv_timeout: 1000
+#      process_timeout: 1000
+#      send_timeout: 1000
+#      persistent_connection: true
+#      max_requests: 1
+#      handle_path: ../apps/StatisticProviderHandle
+
+# 开发环境: dev or prod
+env: prod
+
+# 运行worker的用户,正式环境应该用低权限用户运行worker进程
+worker_user: 
+
+# 数据签名用私匙
+rpc_secret_key: ab1f8e61026a7456289c550cb0cf77cda44302b4
+
+
+
+

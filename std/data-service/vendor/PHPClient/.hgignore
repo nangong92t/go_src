@@ -1,0 +1,7 @@
+syntax: glob
+
+*.swp
+*~
+*.orig
+rpc_protocol_text
+rpc_protocol_text.tgz

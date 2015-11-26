@@ -1,0 +1,8 @@
+*.swp
+app/tmp/*
+app/routes/routes.go
+conf/app.conf
+tools/create
+tools/insert
+tools/insertmysql
+tools/getStatus

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+<allow-access-from domain="std.com" />
+<allow-access-from domain="*.std.com" />
+<allow-access-from domain="std.com:800" />
+<allow-access-from domain="*.std.com:800" />
+<allow-access-from domain="masontest.com" />
+<allow-access-from domain="*.masontest.com" />
+</cross-domain-policy>

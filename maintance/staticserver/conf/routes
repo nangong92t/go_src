@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+module:testrunner
+
+GET     /                                       404 
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+# GET     /public/*filepath                       Static.Serve("public")
+
+# Oauth2.0 Auth
+# POST    /oauth/authorize                        Oauth.Authorize
+
+# Auto build the thumb picure
+#way string 缩略图生成方式: 'auto': 原图全显优先, 'full': 图片填充优先
+GET     /thumb/:way/:width/:height/*picturePath    Public.Thumb
+
+POST    /uploading                              Public.Upload
+
+POST    /upload-sync                            Public.UploadSync
+
+# Catch all
+*       /1/:controller/:action                  :controller.:action

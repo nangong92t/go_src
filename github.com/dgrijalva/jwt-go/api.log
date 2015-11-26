@@ -1,0 +1,71 @@
+ERROR 2014/12/10 17:23:35 build.go:84: # api/app/models
+../../../api/app/models/user.go:9: imported and not used: "labix.org/v2/mgo/bson"
+
+ERROR 2014/12/10 17:23:47 build.go:84: # api/app/modules
+../../../api/app/modules/user.go:17: const initializer errors.New("the username or password is wrong.") is not a constant
+../../../api/app/modules/user.go:51: undefined: data
+
+ERROR 2014/12/10 17:24:04 build.go:84: # api/app/modules
+../../../api/app/modules/user.go:10: imported and not used: "errors"
+../../../api/app/modules/user.go:46: undefined: accountError
+../../../api/app/modules/user.go:51: undefined: data
+
+ERROR 2014/12/10 17:24:13 build.go:84: # api/app/modules
+../../../api/app/modules/user.go:46: undefined: accountError
+../../../api/app/modules/user.go:51: undefined: data
+
+ERROR 2014/12/10 17:24:39 build.go:84: # api/app/modules
+../../../api/app/modules/user.go:51: undefined: data
+
+ERROR 2014/12/10 17:24:55 build.go:84: # api/app/controllers
+../../../api/app/controllers/oauth.go:52: multiple-value userModule.VerifyAccount() in single-value context
+../../../api/app/controllers/oauth.go:68: not enough arguments in call to c.AbstractController.Render
+
+ERROR 2014/12/10 17:25:28 build.go:84: # api/app/controllers
+../../../api/app/controllers/oauth.go:71: not enough arguments in call to c.AbstractController.Render
+
+ERROR 2014/12/10 17:25:42 panic.go:29: Invalid input to ObjectIdHex: ""
+/usr/local/go/goextentions/src/api/app/models/abstract.go:105 (0x6ab899)
+	(*AbstractModel).FindByPkStr: return a.Find(M{"_id": bson.ObjectIdHex(id)})
+/usr/local/go/goextentions/src/api/app/modules/oauth.go:53 (0x5da27e)
+	(*Oauth).GetById: data, _     = oauthClient.FindByPkStr(id)
+/usr/local/go/goextentions/src/api/app/controllers/oauth.go:69 (0x484b8c)
+	(*Oauth).GetPasswordToken: clientPoint := oauth.GetById(appKey)
+/usr/local/go/goextentions/src/api/app/controllers/oauth.go:27 (0x4849fd)
+	(*Oauth).Token: return c.GetPasswordToken(app_key, user, pass)
+/usr/local/go/src/pkg/runtime/asm_amd64.s:363 (0x42bc91)
+	call128: CALLFN(call128, 128)
+/usr/local/go/src/pkg/reflect/value.go:563 (0x43cf40)
+	Value.call: call(fn, args, uint32(frametype.size), uint32(retOffset))
+/usr/local/go/src/pkg/reflect/value.go:411 (0x43bbe7)
+	Value.Call: return v.call("Call", in)
+/usr/local/go/goextentions/src/github.com/revel/revel/invoker.go:35 (0x46078c)
+	ActionInvoker: resultValue = methodValue.Call(methodArgs)[0]
+/usr/local/go/goextentions/src/github.com/revel/revel/compress.go:56 (0x4542c5)
+	CompressFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/intercept.go:103 (0x45ee79)
+	InterceptorFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/i18n.go:155 (0x45e2c4)
+	I18nFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/validation.go:191 (0x472303)
+	ValidationFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/params.go:133 (0x462443)
+	ParamsFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/filterconfig.go:208 (0x45b090)
+	FilterConfiguringFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/router.go:476 (0x46c83f)
+	RouterFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/panic.go:15 (0x460b60)
+	PanicFilter: fc[0](c, fc[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/server.go:43 (0x46cecb)
+	handleInternal: Filters[0](c, Filters[1:])
+/usr/local/go/goextentions/src/github.com/revel/revel/server.go:31 (0x46cbc9)
+	handle: handleInternal(w, r, nil)
+/usr/local/go/src/pkg/net/http/server.go:1235 (0x4f6700)
+	HandlerFunc.ServeHTTP: f(w, r)
+/usr/local/go/src/pkg/net/http/server.go:1673 (0x4f867f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/usr/local/go/src/pkg/net/http/server.go:1174 (0x4f627e)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/usr/local/go/src/pkg/runtime/proc.c:1445 (0x415210)
+	goexit: runtime·goexit(void)

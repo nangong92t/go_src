@@ -1,0 +1,5 @@
+bin/GoServer
+config.yml
+logs
+*.swp
+runtime/*

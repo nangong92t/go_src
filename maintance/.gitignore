@@ -1,0 +1,6 @@
+*.log
+*.out
+*.swp
+staticserver/conf/*.conf
+staticserver/app/tmp/*
+staticserver/app/routes/*

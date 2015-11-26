@@ -1,0 +1,43 @@
+#!/bin/sh
+BASE_HOME=/usr/local/git-sync
+PID=${BASE_HOME}/.pid
+status(){
+   echo "==========status======="
+}
+
+start() {
+    #/usr/bin/nohup /var/www/html/goextentions/bin/revel run maintance/staticserver prod &
+    # auto run by supervisord: /usr/bin/python /usr/bin/supervisord -c /etc/supervisord.conf
+    echo "static server started.";
+}
+
+stop() {
+    killall -9 /data/www/html/goextentions/bin/staticserver
+    echo "static server stoped.";
+}
+
+restart() {
+    stop;
+    echo "restarting.........";
+    sleep 2;
+    start;
+
+}
+case "$1" in
+    'start')
+        start
+        ;;
+    'stop')
+        stop
+        ;;
+    'status')
+        status
+        ;;
+    'restart')
+        restart
+        ;;
+    *)
+    echo "usage: $0 {start|stop|restart|status}"
+    exit 1
+        ;;
+    esac
